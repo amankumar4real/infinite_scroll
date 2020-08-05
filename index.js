@@ -39,7 +39,15 @@ function scroll(){
 
 let get_main = document.querySelector(".main")
 
+let timer = null
+
 get_main.addEventListener("scroll", function(){
     
-    scroll()
+    if(!timer){
+        console.log(1)
+        scroll()
+        timer = setTimeout(()=>{
+            timer = null
+        },15)
+    }
 })
