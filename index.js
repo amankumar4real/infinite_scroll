@@ -27,3 +27,19 @@ function loadText(){
 window.addEventListener("load",()=>{
     loadText()
 })
+
+function scroll(){
+    let scroll_height =  get_main.scrollHeight
+    let scroll_top = Math.ceil(get_main.scrollTop + get_main.clientHeight)
+
+    if(scroll_height === scroll_top){
+        loadText()
+    }
+}
+
+let get_main = document.querySelector(".main")
+
+get_main.addEventListener("scroll", function(){
+    
+    scroll()
+})
